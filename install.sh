@@ -17,7 +17,7 @@ chmod +x "$TARGET_DIR/script.sh"
 echo "Success, script at $TARGET_DIR"
 
 mv "./script.service" "/etc/systemd/system/"
-sed -i "s|/path/to/script.sh|$TARGET_DIR/script.sh"
+sed -i "s|ExecStart=/path/to/script.sh|ExecStart=$TARGET_DIR/script.sh|g" "/etc/systemd/system/script.service"
 echo "Success, service at systemd"
 
 mv "./script.timer" "/etc/systemd/system/"
