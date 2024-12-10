@@ -1,0 +1,9 @@
+[Unit]
+Description=Monitoring daemon
+
+[Service]
+ExecStart=/path/to/script.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
